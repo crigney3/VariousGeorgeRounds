@@ -13,7 +13,7 @@ namespace VariousGeorgeSpace.Cards
     {
         public const float damageUpPerGeorge = 1.25f;
         public const float healthUpPerGeorge = 1.25f;
-        public const float reloadDownPerGeorge = 1.25f;
+        public const float reloadDownPerGeorge = 1.05f;
         public const float blockDownPerGeorge = 1.25f;
 
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)

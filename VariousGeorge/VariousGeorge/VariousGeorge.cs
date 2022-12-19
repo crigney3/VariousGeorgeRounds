@@ -35,6 +35,11 @@ namespace VariousGeorgeSpace
         {
             instance = this;
             CustomCard.BuildCard<SeriousGeorge>();
+            CustomCard.BuildCard<GeorgeForeman>();
+            CustomCard.BuildCard<GeorgeWBush>();
+            CustomCard.BuildCard<GeorgeHWBush>();
+            CustomCard.BuildCard<DeadGeorge>();
+            CustomCard.BuildCard<FuriousGeorge>();
         }
     }
 }

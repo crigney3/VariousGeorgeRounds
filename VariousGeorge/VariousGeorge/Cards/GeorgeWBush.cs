@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace VariousGeorgeSpace.Cards
 {
-    class GeorgeForeman : GeorgeBase
+    class GeorgeWBush : GeorgeBase
     {
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
@@ -20,7 +20,7 @@ namespace VariousGeorgeSpace.Cards
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             float georgeCount = 1;
-            float damageMultiplier;
+            float reloadMultiplier;
 
             //Edits values on player when card is selected
             for (int i = 0; i < player.data.currentCards.Count; i++)
@@ -31,8 +31,9 @@ namespace VariousGeorgeSpace.Cards
                 }
             }
 
-            damageMultiplier = healthUpPerGeorge * georgeCount;
-            gun.damageAfterDistanceMultiplier *= damageMultiplier;
+            //reloadMultiplier = reloadDownPerGeorge * georgeCount;
+            gun.reloadTimeAdd -= 0.05f * georgeCount;
+            gravity.gravityForce /= 4;
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
@@ -41,11 +42,11 @@ namespace VariousGeorgeSpace.Cards
 
         protected override string GetTitle()
         {
-            return "George Foreman";
+            return "George W Bush";
         }
         protected override string GetDescription()
         {
-            return "Grill thy enemy";
+            return "Take to the skies!";
         }
         protected override GameObject GetCardArt()
         {
@@ -62,15 +63,23 @@ namespace VariousGeorgeSpace.Cards
                 new CardInfoStat()
                 {
                     positive = true,
-                    stat = "Damage From Distance",
-                    amount = "+25% per Allied George",
+                    stat = "Gravity",
+                    amount = "-50%",
+                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                },
+
+                new CardInfoStat()
+                {
+                    positive = true,
+                    stat = "Reload Speed",
+                    amount = "+5% per Allied George",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 }
             };
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()
         {
-            return CardThemeColor.CardThemeColorType.FirepowerYellow;
+            return CardThemeColor.CardThemeColorType.DestructiveRed;
         }
         public override string GetModName()
         {

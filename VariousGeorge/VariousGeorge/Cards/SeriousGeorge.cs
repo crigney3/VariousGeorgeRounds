@@ -62,14 +62,6 @@ namespace VariousGeorgeSpace.Cards
                 new CardInfoStat()
                 {
                     positive = true,
-                    stat = "Effect",
-                    amount = "No",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-
-                new CardInfoStat()
-                {
-                    positive = true,
                     stat = "Health",
                     amount = "+25% per Allied George",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
@@ -78,7 +70,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()
         {
-            return CardThemeColor.CardThemeColorType.ColdBlue;
+            return CardThemeColor.CardThemeColorType.DefensiveBlue;
         }
         public override string GetModName()
         {

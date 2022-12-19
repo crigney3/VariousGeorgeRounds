@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace VariousGeorgeSpace.Cards
 {
-    class GeorgeForeman : GeorgeBase
+    class FuriousGeorge : GeorgeBase
     {
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
@@ -20,7 +20,7 @@ namespace VariousGeorgeSpace.Cards
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             float georgeCount = 1;
-            float damageMultiplier;
+            float healthMultiplier;
 
             //Edits values on player when card is selected
             for (int i = 0; i < player.data.currentCards.Count; i++)
@@ -31,8 +31,8 @@ namespace VariousGeorgeSpace.Cards
                 }
             }
 
-            damageMultiplier = healthUpPerGeorge * georgeCount;
-            gun.damageAfterDistanceMultiplier *= damageMultiplier;
+            healthMultiplier = damageUpPerGeorge * georgeCount;
+            gun.damage *= healthMultiplier;
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
@@ -41,11 +41,11 @@ namespace VariousGeorgeSpace.Cards
 
         protected override string GetTitle()
         {
-            return "George Foreman";
+            return "Furious George";
         }
         protected override string GetDescription()
         {
-            return "Grill thy enemy";
+            return "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
         }
         protected override GameObject GetCardArt()
         {
@@ -53,7 +53,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override CardInfo.Rarity GetRarity()
         {
-            return CardInfo.Rarity.Uncommon;
+            return CardInfo.Rarity.Common;
         }
         protected override CardInfoStat[] GetStats()
         {
@@ -62,7 +62,7 @@ namespace VariousGeorgeSpace.Cards
                 new CardInfoStat()
                 {
                     positive = true,
-                    stat = "Damage From Distance",
+                    stat = "Damage",
                     amount = "+25% per Allied George",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 }
@@ -70,7 +70,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()
         {
-            return CardThemeColor.CardThemeColorType.FirepowerYellow;
+            return CardThemeColor.CardThemeColorType.MagicPink;
         }
         public override string GetModName()
         {
