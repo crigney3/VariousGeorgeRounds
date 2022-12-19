@@ -16,6 +16,7 @@ namespace VariousGeorgeSpace.Cards
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
 
             statModifiers.health = 0.0f;
+            
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
@@ -36,7 +37,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override GameObject GetCardArt()
         {
-            return null;
+            return VariousGeorge.DeadGeorgeArt;
         }
         protected override CardInfo.Rarity GetRarity()
         {

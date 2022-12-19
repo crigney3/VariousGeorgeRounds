@@ -14,7 +14,6 @@ namespace VariousGeorgeSpace.Cards
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
-            
 
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
@@ -49,7 +48,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override GameObject GetCardArt()
         {
-            return null;
+            return VariousGeorge.GeorgeForemanArt;
         }
         protected override CardInfo.Rarity GetRarity()
         {

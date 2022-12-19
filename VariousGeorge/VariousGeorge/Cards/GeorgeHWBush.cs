@@ -20,7 +20,6 @@ namespace VariousGeorgeSpace.Cards
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-            System.Random random = new System.Random();
             int randomValue;
             float multiplier;
 
@@ -95,7 +94,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override GameObject GetCardArt()
         {
-            return null;
+            return VariousGeorge.GeorgeHWBushArt;
         }
         protected override CardInfo.Rarity GetRarity()
         {

@@ -49,7 +49,7 @@ namespace VariousGeorgeSpace.Cards
         }
         protected override GameObject GetCardArt()
         {
-            return null;
+            return VariousGeorge.SeriousGeorgeArt;
         }
         protected override CardInfo.Rarity GetRarity()
         {

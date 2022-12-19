@@ -4,6 +4,7 @@ using UnboundLib.Cards;
 using VariousGeorgeSpace.Cards;
 using HarmonyLib;
 using CardChoiceSpawnUniqueCardPatch.CustomCategories;
+using UnityEngine;
 
 namespace VariousGeorgeSpace
 {
@@ -19,9 +20,20 @@ namespace VariousGeorgeSpace
     {
         private const string ModId = "com.yakman3.rounds.VariousGeorge";
         private const string ModName = "Various George";
-        public const string Version = "1.0.0"; // What version are we on (major.minor.patch)?
+        public const string Version = "1.1.0"; // What version are we on (major.minor.patch)?
 
         public const string ModInitials = "VG";
+
+        private static readonly AssetBundle Bundle = Jotunn.Utils.AssetUtils.LoadAssetBundleFromResources("georges", typeof(VariousGeorge).Assembly);
+
+        public static GameObject DeadGeorgeArt = Bundle.LoadAsset<GameObject>("C_QuickReload");
+        public static GameObject SeriousGeorgeArt = Bundle.LoadAsset<GameObject>("SeriousGeorge");
+        public static GameObject GeorgeWBushArt = Bundle.LoadAsset<GameObject>("GeorgeWBush");
+        public static GameObject GeorgeHWBushArt = Bundle.LoadAsset<GameObject>("GeorgeHWBush");
+        public static GameObject FuriousGeorgeArt = Bundle.LoadAsset<GameObject>("GuriousGeorge");
+        public static GameObject GeorgeForemanArt = Bundle.LoadAsset<GameObject>("GeorgeForeman");
+        public static GameObject IsomerGeorgeArt = Bundle.LoadAsset<GameObject>("IsomerGeorge");
+        public static GameObject SampleArt = Bundle.LoadAsset<GameObject>("Sample Card");
 
         public static VariousGeorge instance { get; private set; }
 
@@ -40,7 +52,13 @@ namespace VariousGeorgeSpace
             CustomCard.BuildCard<GeorgeHWBush>();
             CustomCard.BuildCard<DeadGeorge>();
             CustomCard.BuildCard<FuriousGeorge>();
+            CustomCard.BuildCard<IsomerGeorge>();
         }
+
+        //void OnModUnload()
+        //{
+
+        //}
     }
 }
 

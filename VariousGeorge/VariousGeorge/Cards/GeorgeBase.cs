@@ -16,6 +16,8 @@ namespace VariousGeorgeSpace.Cards
         public const float reloadDownPerGeorge = 1.05f;
         public const float blockDownPerGeorge = 1.25f;
 
+        public System.Random random = new System.Random();
+
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
