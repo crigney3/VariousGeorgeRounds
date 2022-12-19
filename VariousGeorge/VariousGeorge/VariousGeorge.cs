@@ -34,7 +34,7 @@ namespace VariousGeorgeSpace
         void Start()
         {
             instance = this;
-            CustomCard.BuildCard<MyCardName>();
+            CustomCard.BuildCard<SeriousGeorge>();
         }
     }
 }
