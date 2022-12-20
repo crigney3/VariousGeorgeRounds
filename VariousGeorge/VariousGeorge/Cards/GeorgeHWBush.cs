@@ -34,10 +34,10 @@ namespace VariousGeorgeSpace.Cards
                         gun.damage *= multiplier;
                         break;
                     case 1:
-                        gun.reloadTime *= multiplier;
+                        PlayerManager.instance.GetOtherPlayer(player).data.maxHealth *= multiplier;
                         break;
                     case 2:
-                        gun.projectileSpeed *= multiplier;
+                        gunAmmo.reloadTime *= multiplier;
                         break;
                     case 3:
                         gun.projectileSize *= multiplier;
@@ -46,7 +46,7 @@ namespace VariousGeorgeSpace.Cards
                         gun.attackSpeed *= multiplier;
                         break;
                     case 5:
-                        statModifiers.health *= multiplier;
+                        player.data.maxHealth *= multiplier;
                         break;
                     case 6:
                         if (multiplier == 0.5f)
@@ -60,18 +60,18 @@ namespace VariousGeorgeSpace.Cards
                     case 7:
                         if (multiplier == 0.5f)
                         {
-                            gun.ammo /= 2;
+                            gunAmmo.maxAmmo /= 2;
                         }
                         else
                         {
-                            gun.ammo *= (int)multiplier;
+                            gunAmmo.maxAmmo *= (int)multiplier;
                         }
                         break;
                     case 8:
                         statModifiers.movementSpeed *= multiplier;
                         break;
                     case 9:
-                        block.cooldown *= multiplier;
+                        gravity.exponent *= multiplier;
                         break;
                     default:
                         gun.damage *= multiplier;

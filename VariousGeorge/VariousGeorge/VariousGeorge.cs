@@ -26,14 +26,13 @@ namespace VariousGeorgeSpace
 
         private static readonly AssetBundle Bundle = Jotunn.Utils.AssetUtils.LoadAssetBundleFromResources("georges", typeof(VariousGeorge).Assembly);
 
-        public static GameObject DeadGeorgeArt = Bundle.LoadAsset<GameObject>("C_QuickReload");
+        public static GameObject DeadGeorgeArt = Bundle.LoadAsset<GameObject>("DeadGeorge");
         public static GameObject SeriousGeorgeArt = Bundle.LoadAsset<GameObject>("SeriousGeorge");
-        public static GameObject GeorgeWBushArt = Bundle.LoadAsset<GameObject>("GeorgeWBush");
+        public static GameObject GeorgeWBushArt = Bundle.LoadAsset<GameObject>("GeorgeBush");
         public static GameObject GeorgeHWBushArt = Bundle.LoadAsset<GameObject>("GeorgeHWBush");
-        public static GameObject FuriousGeorgeArt = Bundle.LoadAsset<GameObject>("GuriousGeorge");
+        public static GameObject FuriousGeorgeArt = Bundle.LoadAsset<GameObject>("FuriousGeorge");
         public static GameObject GeorgeForemanArt = Bundle.LoadAsset<GameObject>("GeorgeForeman");
         public static GameObject IsomerGeorgeArt = Bundle.LoadAsset<GameObject>("IsomerGeorge");
-        public static GameObject SampleArt = Bundle.LoadAsset<GameObject>("Sample Card");
 
         public static VariousGeorge instance { get; private set; }
 

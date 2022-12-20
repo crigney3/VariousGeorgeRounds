@@ -11,20 +11,27 @@ namespace VariousGeorgeSpace.Cards
 {
     class DeadGeorge : GeorgeBase
     {
+        Player playerRef;
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
 
-            statModifiers.health = 0.0f;
-            
+
+
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
-
+            playerRef = player;
+            player.data.ExecuteAfterSeconds(2.0f, DeathAction);
+            //player.data.ExecuteAfterSeconds(2.0f, DeathAction);
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Run when the card is removed from the player
+        }
+        public void DeathAction() {
+            playerRef.data.maxHealth = 0.0f;
+            playerRef.data.movement.enabled = false;
         }
 
         protected override string GetTitle()

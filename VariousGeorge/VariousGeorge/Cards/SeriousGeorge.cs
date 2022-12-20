@@ -29,6 +29,10 @@ namespace VariousGeorgeSpace.Cards
                 {
                     georgeCount++;
                 }
+                if (player.data.currentCards[i].cardName.Contains("Isomer"))
+                {
+                    georgeCount++;
+                }
             }
 
             healthMultiplier = healthUpPerGeorge * georgeCount;

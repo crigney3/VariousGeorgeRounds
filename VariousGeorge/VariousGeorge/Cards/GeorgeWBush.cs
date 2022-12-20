@@ -29,10 +29,14 @@ namespace VariousGeorgeSpace.Cards
                 {
                     georgeCount++;
                 }
+                if (player.data.currentCards[i].cardName.Contains("Isomer"))
+                {
+                    georgeCount++;
+                }
             }
 
             //reloadMultiplier = reloadDownPerGeorge * georgeCount;
-            gun.reloadTimeAdd -= 0.05f * georgeCount;
+            gunAmmo.reloadTime -= 0.05f * georgeCount;
             gravity.gravityForce /= 4;
         }
         public override void OnRemoveCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
